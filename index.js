@@ -233,12 +233,13 @@ function getArtistByIndex(array, i) {
   return `the artist at index ${array[i].id} is ${array[i].name}`
  }
 
+ // We are passing in an array and an index and returning a string. Within the string, we are going to select the key at the specific index so that it prints out semantically.
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
 1. Receive an array
-2. Return a new array with names of artists who were born in and died in 20th century (1900-2000) 
+2. Return a new array with names of artists who were born in and died in 20th century (1900 '-' 2000) 
 
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
@@ -247,13 +248,14 @@ function get20s(array){
   const newArray = [];
   for(let i = 0; i < array.length; i++){
     const split = array[i].years.split(" ");
-		if(Number(split[0]) >= 1900 && Number(split[2]) <= 2000){ // used number function to make strings ints after I split them
+		if(Number(split[0]) >= 1900 && Number(split[2]) <= 2000){ 
       newArray.push(array[i].name);
     }
   }
   return newArray;
 }
 
+// In this function, we can't use an operator on a string so we have to split it and then call it's index position, wrap it in a number function to convert it to an int and then compare it with an operator to what we set our conditions to. Then we add it to a new array any time it meets the condition.
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -268,6 +270,8 @@ function get20s(array){
 function removeArtist(array, i){
    return array.splice(i, 1), array.length;
 }
+
+// Here we are going to select artist based on the index that was passed in, remove it with splice and return the length of modified array.
    
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -287,7 +291,7 @@ Use addArtist to do the following:
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
 function addArtist(array){
-  array.push({ 
+  array.push({
     id: 20,
     name: 'Bradly', 
     years: '1994 - 2021',
@@ -298,7 +302,7 @@ function addArtist(array){
   return array;
 }
 
-  
+// Here we are going to add an artist - ME - to the end of the array using a .push. I had to make sure that the value's were strings because it was looking for variable declarations and they weren't there.
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -317,7 +321,7 @@ function lotsOfArt(array){
   return newArray;
 }
 
-
+// We are going to cycle through the array using a for loop starting from the bottom and set a condition to check every time it sees an artist with a painting value of greater than 100.
 
 
 // 🎨🎨 STRETCH 🎨🎨//
