@@ -244,10 +244,14 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(array){
-//   const newArray = [];
-// 	for(let i = 0; i < 0; i++){
-//     array[i].years.split(" ");
-// 		if(Number(split[0]) >= 1900 && Number(split[2]) <= 2000)
+  const newArray = [];
+  for(let i = 0; i < array.length; i++){
+    const split = array[i].years.split(" ");
+		if(Number(split[0]) >= 1900 && Number(split[2]) <= 2000){ // used number function to make strings ints after I split them
+      newArray.push(array[i].name);
+    }
+  }
+  return newArray;
 }
 
 
