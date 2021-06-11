@@ -286,9 +286,17 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+function addArtist(array){
+  array.push({ 
+    id: 20,
+    name: 'Bradly', 
+    years: '1994 - 2021',
+    genre: 'Web Design', 
+    nationality: 'American', 
+    bio: 'This is placeholder text that I am required to do. I am Mr. Nobody and have no bio but here is more text just to make it a bit longer. Boom! Done.'
+  });
+  return array;
+}
 
   
 
@@ -299,8 +307,14 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array){
+  const newArray = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].paintings > 100){
+      newArray.push(array[i].name)
+    }
+  }
+  return newArray;
 }
 
 
@@ -328,27 +342,49 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */){
+function getHTML(data){
 
     /* Code here */
-
+    for (const i in data) {
+        if(data[i].wikipedia) {
+          console.log(`
+          <div id=${data[i].id}>
+          <div class="image">
+              <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg"/>
+          </div>
+          <div class = "name">
+              <a href="https://en.wikipedia.org/wiki/Vincent_van_Gogh"> Vincent Van Gogh</a>
+          </div>
+          <div class = "bio">${data[i].bio}</div>
+          </div>
+          `);
+    }
   }
+}
 
+// getHTML(artists);
 
 /* 💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪
 Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */){
-
-    /* Code here */
-
+function randomize(array){
+  let a, b, i;
+  for (i = array.length - 1; i > 0; i--) {
+      a = Math.floor(Math.random() * (i + 1));
+      b = array[i];
+      array[i] = array[a];
+      array[a] = b;
   }
+  return array;
+}
+
+// console.log(randomize(artists));
 
 
  /* 💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪
  Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
 
- 
+ // haven't got much time left to do this
  
  
  /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
