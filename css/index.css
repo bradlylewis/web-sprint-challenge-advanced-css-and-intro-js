@@ -136,3 +136,19 @@ button:hover{
 }
 
 /* Mobile Section Styles */
+@media(max-width: 500px){
+    /*if the screen size is 500px or smaller apply these styles*/
+
+    /* Header Styles */
+    nav{
+        padding: 2%;
+    }
+    nav a{
+        margin: 6%;
+        font-size: 2rem;
+        line-height: 0.1;
+    }
+    nav span{
+        border-left:2px solid #626262;
+    }
+}
