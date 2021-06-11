@@ -137,18 +137,38 @@ button:hover{
 
 /* Mobile Section Styles */
 @media(max-width: 500px){
+    
     /*if the screen size is 500px or smaller apply these styles*/
 
     /* Header Styles */
-    nav{
-        padding: 2%;
+    section{
+        /* width: 100%; */
+        margin: 0;
+    }
     }
     nav a{
-        margin: 6%;
-        font-size: 2rem;
-        line-height: 0.1;
+        transform: scale(0.7, 0.7);
     }
     nav span{
         border-left:2px solid #626262;
+        transform: scale(0.7, 0.7);
+    }
+
+    /* Top Section Styles */
+    .title-container div{
+        height: 30vh;
+        width: 100%;
+    }
+    .title-container hr{
+        width: 100%;
+        margin-top: -2%;
+    }
+    h1{
+        transform: scale(0.7, 0.7);
+        line-height: 1.2;
+    }
+    button {
+        position: absolute;
+        margin-top: 33%;
     }
 }
