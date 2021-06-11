@@ -199,33 +199,3 @@ button:hover{
         line-height: 1;
     }
 }
-
-/* .artists-container {
-    display:flex;
-    justify-content: space-evenly;
-    width:100%;
-    margin: 0 auto;
-}
-
-.artist {
-    width:100%;
-    text-align:center;
-}
-
-.artist img {
-    width:40%;
-    height: 40%;
-}
-
-.artist a {
-    font-size: 1.3rem;
-}
-
-.bio {
-    font-size: 0.8rem;
-    width: 50%;
-    height: 40%;
-    margin: 0 auto;
-    margin-top: 1.5%;
-}
-} */
